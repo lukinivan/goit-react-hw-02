@@ -1,4 +1,5 @@
 import s from "./Options.module.css";
+import clsx from "clsx";
 
 export const Options = ({
   options,
@@ -11,7 +12,7 @@ export const Options = ({
       {options.map((key) => (
         <li key={key}>
           <button
-            className={s.btn}
+            className={clsx(s.btn, { [s[key]]: key })}
             type="button"
             onClick={() => handleClick(key)}
           >
@@ -21,7 +22,11 @@ export const Options = ({
       ))}
       {totalFeedback > 0 && (
         <li>
-          <button className={s.btn} type="button" onClick={handleReset}>
+          <button
+            className={clsx(s.btn, s.reset)}
+            type="button"
+            onClick={handleReset}
+          >
             Reset
           </button>
         </li>
