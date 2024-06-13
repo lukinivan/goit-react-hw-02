@@ -1,4 +1,4 @@
-import { Description, Feedback, Options } from "/src/components";
+import { Description, Feedback, Options, Notification } from "/src/components";
 import { useLocalStorage } from "/src/hooks/useLocalStorage";
 
 const counters = {
@@ -47,7 +47,7 @@ export const CafeBuilder = () => {
           ]}
         />
       ) : (
-        <h2>No feedback yet</h2>
+        <Notification />
       )}
     </>
   );
